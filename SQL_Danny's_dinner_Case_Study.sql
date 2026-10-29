@@ -137,8 +137,8 @@ group by s.customer_id;
 
 
 
--- 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - 
--- how many points would each customer have?
+/* 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - 
+ how many points would each customer have? */
 select s.customer_id,
 sum(case 
 when m.product_id = 1 then 200
@@ -149,8 +149,8 @@ on s.product_id = m.product_id
 group by s.customer_id;
 
 
--- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items,not just sushi - 
--- how many points do customer A and B have at the end of January?
+/* 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items,not just sushi - 
+ how many points do customer A and B have at the end of January? */
  
  with program_date as 
  (select customer_id, join_date,
